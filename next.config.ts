@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-const repo = "site-eja";
+const repo = "unidas-supletivo";
 const assetPrefix = `/${repo}/`;
 const basePath = `/${repo}`;
 
