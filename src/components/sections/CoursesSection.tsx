@@ -1,10 +1,8 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { CONTACT_INFO, COURSES } from '@/constants/content';
-import { Users, Monitor, Clock, Calendar, Check } from 'lucide-react';
-import Image from 'next/image';
+import { COURSES } from '@/constants/content';
+import { Users, Monitor, Calendar, Check } from 'lucide-react';
 import Link from 'next/link';
 
 export function CoursesSection() {

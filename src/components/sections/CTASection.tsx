@@ -4,13 +4,13 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
+
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { CONTACT_INFO } from '@/constants/content';
 import Image from 'next/image';
-import { Phone, ArrowRight, GraduationCap } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
@@ -40,9 +40,7 @@ export function CTASection() {
     window.open(`https://wa.me/${CONTACT_INFO.whatsapp}?text=${message}`, '_blank');
   };
 
-  const handlePhoneClick = () => {
-    window.open(`tel:${CONTACT_INFO.phone}`, '_self');
-  };
+
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsLoading(true);
@@ -65,8 +63,12 @@ export function CTASection() {
 
       setSubmitStatus({ success: true, message: 'Mensagem enviada com sucesso!' });
       form.reset();
-    } catch (error: any) {
-      setSubmitStatus({ success: false, message: error.message });
+    } catch (error) {
+      if (error instanceof Error) {
+        setSubmitStatus({ success: false, message: error.message });
+      } else {
+        setSubmitStatus({ success: false, message: 'Ocorreu um erro desconhecido.' });
+      }
     } finally {
       setIsLoading(false);
     }

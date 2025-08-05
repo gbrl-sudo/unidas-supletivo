@@ -11,7 +11,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Todos os campos são obrigatórios.' }, { status: 400 });
     }
 
-    const { data, error } = await resend.emails.send({
+    const { error } = await resend.emails.send({
       from: 'Acme <onboarding@resend.dev>', // Este domínio precisa ser verificado no Resend
       to: ['seu-email@dominio.com'], // Substitua pelo seu e-mail de recebimento
       subject: `Nova mensagem de ${name} - Site EJA`,

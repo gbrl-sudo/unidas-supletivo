@@ -9,8 +9,6 @@ import {
   Clock, 
   BookOpen, 
   CheckCircle,
-  FileText,
-  Award,
   ArrowLeft,
   Info
 } from 'lucide-react';

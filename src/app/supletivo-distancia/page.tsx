@@ -8,10 +8,7 @@ import { COURSES, CONTACT_INFO } from '@/constants/content';
 import {
   CheckCircle,
   ArrowLeft,
-  Globe,
   BookOpen,
-  Award,
-  Users,
   Info,
   Clock
 } from 'lucide-react';
@@ -25,21 +22,6 @@ export default function SupletivoDistanciaPage() {
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent(CONTACT_INFO.whatsappMessage);
     window.open(`https://wa.me/${CONTACT_INFO.whatsapp}?text=${message}`, '_blank');
-  };
-
-  const platformFeatures = {
-    content: [
-      'Videoaulas de todas as disciplinas',
-      'Exercícios interativos e simulados',
-      'Material didático digital',
-      'Acompanhamento de progresso',
-    ],
-    support: [
-      'Tutores especializados',
-      'Fórum de dúvidas',
-      'Aulas ao vivo no YouTube',
-      'Atendimento personalizado',
-    ],
   };
 
   const accordionItems: {
